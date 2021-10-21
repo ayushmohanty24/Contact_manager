@@ -1,0 +1,54 @@
+<div class="container">
+    <form #regForm="ngForm" (ngSubmit)="onSubmitForm()">
+    <div class="form">
+        <div [class]="isError? 'alert alert-danger':'d-none'" class="my-4">{{message}}</div>
+        <div [class]="isSuccess? 'alert alert-danger':'d-none'" class="my-4">{{message}}</div>
+        <h2>REGISTER</h2>
+        <div class="input">
+            <div class="Group">
+            <div class="inputBox">
+                <label for="">Username</label>
+                <input type="text" #fname="ngModel" name="fname" [class.is-invalid]="fname.errors && fname.touched" required [(ngModel)]="userin.name">
+            </div>
+            <div *ngIf="fname.errors && fname.touched">
+                <div class="text-danger" *ngIf="fname.errors.required">Full name is required</div>
+            </div>
+        </div> 
+        <div class="Group">           
+            <div class="inputBox">
+              <label for="">Email</label>
+              <input type="text" #email="ngModel" name="email" [class.is-invalid]="email.errors && email.touched" required [(ngModel)]="userin.email">
+          </div>
+          <div *ngIf="email.errors && email.touched">
+            <div class="text-danger" *ngIf="email.errors.required">Email is required</div>
+        </div>
+        </div>
+        <div class="Group">
+            <div class="inputBox">
+                <label for="">Password</label>
+                <input type="password" #pass="ngModel" name="pass" [class.is-invalid]="pass.errors && pass.touched" required [(ngModel)]="userin.password">
+            </div>
+            <div *ngIf="pass.errors && pass.touched">
+                <div class="text-danger" *ngIf="pass.errors.required">Password is required</div>
+            </div>
+            </div>
+            <div class="Group">
+            <div class="inputBox">
+                <label for="">Confirm Password</label>
+                <input type="password" >
+            </div>
+            <!-- <div *ngIf="Password.errors&&Password.touched">
+                <div class="text-danger" *ngIf="Password.errors.required">Confirm Password is required</div>
+            </div> -->
+            </div>
+            <div class="inputBox">
+                <input type="submit" name="" value="Sign Up" [disabled]="regForm.form.invalid"> 
+            </div>
+        </div>
+        <p class="forgot">Already an user? <a routerLink="/firstpage">Login Here</a></p>
+       
+    </div>
+</form>
+</div>
+    
+  

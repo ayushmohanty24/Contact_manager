@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="form">
+        <h2>UPDATE CONTACT</h2>
+        <form #updateForm="ngForm" (ngSubmit)="addUpdateForm()">
+            <div [class]="isError?'alert alert-danger':'d-none'">{{message}}</div>
+            <div [class]="isSuccess?'alert alert-success':'d-none'">{{message}}</div>
+        <div class="input">
+            <div class="inputBox">
+                <label for="">Name</label>
+                <input type="text" name="Name" required #myname="ngModel" [class.is-invalid]="myname.errors&&myname.touched" [(ngModel)]="contactd.contactName">
+                <div *ngIf="myname.errors&&myname.touched">
+                    <div class="text-danger" *ngIf="myname.errors.required">FullName is required</div>
+                </div>
+            </div>
+            <div class="inputBox">
+              <label for="">Email</label>
+              <input type="text" name="mail"  email required #emailmy="ngModel" [class.is-invalid]="myname.errors&&myname.touched"  [(ngModel)]="contactd.contactEmail">
+              <div *ngIf="emailmy.errors&&emailmy.touched">
+                <div class="text-danger" *ngIf="emailmy.errors.required">Email is required</div>
+            </div>
+          </div>
+            <div class="inputBox">
+                <label for="">Phone</label>
+                <input type="string" name="phone" required #phonemy="ngModel" [class.is-invalid]="phonemy.errors&&phonemy.touched"  [(ngModel)]="contactd.contactPhone">
+                <div *ngIf="phonemy.errors&&phonemy.touched">
+                    <div class="text-danger" *ngIf="phonemy.errors.required">Phone Number is required</div>
+                    
+                </div>
+            </div>
+            <div class="inputBox">
+                <label for="">Contact Type</label>
+                <input type="text" name="Type" required #type="ngModel" [class.is-invalid]="type.errors&&type.touched"  [(ngModel)]="contactd.contactType">
+                <div *ngIf="type.errors&&type.touched">
+                    <div class="text-danger" *ngIf="type.errors.required">Contact type is required</div>
+                </div>
+            </div>
+            <div class="inputBox">
+                <input type="submit" name="validation" value="Update" id="signin" [disabled]="updateForm.form.invalid"> 
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+

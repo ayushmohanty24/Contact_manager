@@ -1,0 +1,29 @@
+<div class="container">
+    <form #logForm="ngForm" (ngSubmit)="onLoginForm()">
+        <div [class]="isError?'alert alert-danger':'d-none'">{{message}}</div>
+        <div [class]="isSuccess?'alert alert-success':'d-none'">{{message}}</div>
+    <div class="form">
+        <h2>Login</h2>
+        <div class="input">
+            <div class="inputBox">
+                <label for="">Email</label>
+                <input type="text" #em="ngModel" name="email" required [(ngModel)]="email">
+            </div>
+            <div class="inputBox">
+                <label for="">Password</label>
+                <input type="password"  #pass="ngModel" name="password" required [(ngModel)]="password">
+            </div>
+            <div class="inputBox">
+                <input type="submit" name="validation" value="Sign In"> 
+            </div>
+        </div>
+        <p class="forgot">New User? <a routerLink="/registerpg">Register Here</a></p>
+       
+    </div>
+    </form>
+</div>
+
+
+
+  
+

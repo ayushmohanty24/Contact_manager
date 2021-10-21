@@ -1,0 +1,67 @@
+<app-nav></app-nav>
+  <div class="container">
+  
+        <!-- <div class="col-md-3"></div> -->
+      <!-- <div class="justify-content-md-center col-12 back ">
+        <div class="img-section text-center">
+          <img src="assets\image3.jpeg" id="imgsec" width="200" height="200" alt="user image">
+        </div>
+        <div class="info text-light text-center mt-3">
+          <h4>john</h4>
+          <span>john@gmail.com</span>
+        </div>
+  
+        <form class="text-center formsec mt-4"><br>
+          <input type="file" name="uploadfile" id="img" style="display:none;"/>
+          <label for="img" style="color: #82E0AA;">Click me to upload image</label><br>
+          <button class="btn sub btn-outline-light mt-2" type="submit">Submit</button>
+        </form>
+  
+      </div> -->
+      <!-- <div class="col-12"> -->
+        <!-- <div class="inputbox">
+          <input type="search" name="search" id="signin">
+          <button type="submit" id="but"><i class="fas fa-search">SEARCH</i></button>
+       </div> -->
+       <div class="tableheader mt-5">
+        <div class="container inputbox">
+          <div class="row text-center"  id="tablebox">
+            <div class="col-md-2">
+              <h6>Name</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>Email</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>Phone</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>Type</h6>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+          </div>
+          <div class="row mt-3 text-center" id="contentbox" *ngFor="let d of Data">
+            <div class="col-md-2">
+              <h6>{{d.contactName}}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{d.contactEmail}}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{d.contactPhone}}</h6>
+            </div>
+            <div class="col-md-2">
+              <h6>{{d.contactType}}</h6>
+            </div>
+            <div class="col-md-2 mt-1">
+              <button class="btn btn-outline-light" routerLink="/updatecontact/{{d._id}}" type="submit">Update</button>
+            </div>
+            <div class="col-md-2 mt-1">
+              <button class="btn btn-outline-danger" (click)="onDeleteContact(d)" type="submit">Delete</button>
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+
